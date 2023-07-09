@@ -4,3 +4,10 @@
 .tab{
     width: 33%;
 } */
+.tab-content>.active{
+    width:70%;
+}
+.tab-content{
+    display: flex;
+    justify-content: center;
+}

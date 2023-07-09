@@ -3,10 +3,20 @@ import React from 'react';
 import 'chart.js/auto';
 import {Bar} from 'react-chartjs-2';
 import './Academics.css'
+// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-
+// function handleclick() {
+//   <Link To='/criteria'></Link>
+// }
 
 function Academics() {
+   
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+      navigate("/criteria");
+  }
     const state = {
         labels: ['Quarter-1', 'Quarter-2', 'Quarter-3',
                  'Quarter-4'],
@@ -26,15 +36,16 @@ function Academics() {
       //   navigate(path);
       // }
     return (
-      <div className='bargraph'>
+      
+        // <Link To='/criteria'>
+          <div className='bargraph'>
         <Bar
-          Link to = "/criteria"
-          // onClick={routeChange}
+          onClick={handleClick}
           data={state}
           options={{
             title:{
               display:true,
-              text:'Average Rainfall per month',
+              text:'Diability',
               fontSize:20
             },
             legend:{
@@ -43,7 +54,9 @@ function Academics() {
             }
           }}
         />
-      </div>
+        </div>
+        // </Link>
+      
     );
 }
 
